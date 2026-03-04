@@ -178,3 +178,31 @@ Idx Name          Size      VMA               LMA               File off  Algn
   2 .riscv.attributes 0000005a  0000000000000000  0000000000000000  00001022  2**0
                   CONTENTS, READONLY
 ```
+
+# Makefile
+
+I know it's a bit dumb, but i never wrote a Makefile before, so i don't know the syntax.
+
+It works like so :
+
+```Makefile
+target: dependencies
+    command
+```
+
+The target is the file you wanna create, for example main.o
+The dependencies are the files you need to create the target, for example main.c
+The command is the command to create the target, for example `gcc main.c -c`
+So here is would be :
+
+```Makefile
+main.o: main.c
+    gcc main.c -c
+```
+
+Here you go ! Ez isn't it ?
+
+Tips : 
+You can create a variable with `myVariable = something` and use it with `$(myVariable)`.
+
+> Note : to stop the qemu emulation, press `Ctrl+A` then `x`
