@@ -1,0 +1,26 @@
+# Compiled objects
+*.o
+*.d
+*.elf
+*.bin
+*.sym
+*.asm
+
+# Kernel binary
+kernel/kernel
+
+# Disk image
+fs.img
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# GDB
+.gdbinit
+
+# Others
+MINIOS_ROADMAP(1).md
+xv6-riscv/
