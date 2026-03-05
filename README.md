@@ -18,8 +18,8 @@ Kira is a learning-driven kernel project. The objective is to understand how an 
 
 - [x] Toolchain setup & cross-compilation
 - [x] Linker script — kernel placed at `0x80000000`
-- [ ] Boot sequence — `_start` entry point, stack initialization
-- [ ] UART driver — serial output
+- [x] Boot sequence — `_start` entry point, stack initialization
+- [x] UART driver — serial output
 - [ ] Memory management — physical page allocator
 - [ ] Interrupts & trap handling
 - [ ] Scheduler
