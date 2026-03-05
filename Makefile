@@ -4,23 +4,22 @@ LD = riscv64-unknown-elf-ld
 OBJCOPY = riscv64-unknown-elf-objcopy
 
 # Flags
-CFLAGS = -march=rv64g -mabi=lp64 -nostdlib -ffreestanding -O2
+CFLAGS = -march=rv64g -mabi=lp64 -nostdlib -ffreestanding -O2 -Iinclude -mcmodel=medany
 LDFLAGS = -T linker.ld
 
 # Files
-OBJS = boot/start.o kernel/hello.o
+OBJS = boot/start.o kernel/hello.o kernel/uart.o
 
 # Default target (first one = called by just `make`)
 kernel.elf: $(OBJS)
 	$(LD) $(LDFLAGS) -o kernel.elf $(OBJS)
 
-# Compile .S -> .o
-boot/start.o: boot/start.S
-	$(CC) $(CFLAGS) -c boot/start.S -o boot/start.o
+# Pattern rules
+%.o: %.S
+	$(CC) $(CFLAGS) -c $< -o $@
 
-# Compile .c -> .o
-kernel/hello.o: kernel/hello.c
-	$(CC) $(CFLAGS) -c kernel/hello.c -o kernel/hello.o
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # Run in QEMU
 run: kernel.elf
