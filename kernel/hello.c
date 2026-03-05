@@ -1,5 +1,7 @@
+#include "defs.h"
+
 int main() {
-    // code here later on
+    uart_puts("Kira booting...\n");
     while(1){
         __asm__ volatile("wfi");
     }
