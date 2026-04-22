@@ -126,6 +126,7 @@ sw   rs2,off(rs1)   # store rs2 into memory (**STORE : Destination is listed las
 `sb` : store byte
 `sh` : store halfword
 `sw` : store word
+`sd` : store doubleword
 
 > `sb  rs2,imm12(rs1)  # MEM [rs1+imm12] = rs2`
 
