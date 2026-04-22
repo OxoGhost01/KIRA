@@ -21,7 +21,7 @@ Kira is a learning-driven kernel project. The objective is to understand how an 
 - [x] Boot sequence — `_start` entry point, stack initialization
 - [x] UART driver — serial output
 - [ ] Memory management — physical page allocator
-- [ ] Interrupts & trap handling
+- [x] Interrupts & trap handling
 - [ ] Scheduler
 
 ## Build
@@ -44,10 +44,18 @@ make qemu
 
 ```
 kira/
+├── boot/
+│   └── start.S         # _start, stack init, mtvec setup
+├── include/
+│   ├── defs.h          # function declarations
+│   └── types.h         # primitive type definitions
 ├── kernel/
-│   ├── entry.S       # _start, stack init
-│   ├── main.c        # kernel entry point
-│   └── linker.ld     # linker script
+│   ├── hello.c         # kernel entry point (main)
+│   ├── kerneltrap.c    # trap handler, timer init
+│   ├── trap.S          # trap vector, register save/restore
+│   ├── timer.c         # timer helpers
+│   └── uart.c          # UART driver
+├── linker.ld           # linker script
 └── Makefile
 ```
 
