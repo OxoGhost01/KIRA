@@ -1,0 +1,22 @@
+[
+  {
+    "directory": "/home/oxoghost/Documents/SynologyDrive/Code_things/Others/Likn",
+    "command": "riscv64-unknown-elf-gcc -march=rv64g -mabi=lp64 -nostdlib -ffreestanding -O2 -Iinclude -mcmodel=medany -c kernel/kerneltrap.c -o kernel/kerneltrap.o",
+    "file": "kernel/kerneltrap.c"
+  },
+  {
+    "directory": "/home/oxoghost/Documents/SynologyDrive/Code_things/Others/Likn",
+    "command": "riscv64-unknown-elf-gcc -march=rv64g -mabi=lp64 -nostdlib -ffreestanding -O2 -Iinclude -mcmodel=medany -c kernel/hello.c -o kernel/hello.o",
+    "file": "kernel/hello.c"
+  },
+  {
+    "directory": "/home/oxoghost/Documents/SynologyDrive/Code_things/Others/Likn",
+    "command": "riscv64-unknown-elf-gcc -march=rv64g -mabi=lp64 -nostdlib -ffreestanding -O2 -Iinclude -mcmodel=medany -c kernel/uart.c -o kernel/uart.o",
+    "file": "kernel/uart.c"
+  },
+  {
+    "directory": "/home/oxoghost/Documents/SynologyDrive/Code_things/Others/Likn",
+    "command": "riscv64-unknown-elf-gcc -march=rv64g -mabi=lp64 -nostdlib -ffreestanding -O2 -Iinclude -mcmodel=medany -c kernel/trap.S -o kernel/trap.o",
+    "file": "kernel/trap.S"
+  }
+]

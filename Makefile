@@ -8,7 +8,7 @@ CFLAGS = -march=rv64g -mabi=lp64 -nostdlib -ffreestanding -O2 -Iinclude -mcmodel
 LDFLAGS = -T linker.ld
 
 # Files
-OBJS = boot/start.o kernel/hello.o kernel/uart.o
+OBJS = boot/start.o kernel/hello.o kernel/uart.o kernel/kerneltrap.o kernel/trap.o
 
 # Default target (first one = called by just `make`)
 kernel.elf: $(OBJS)
