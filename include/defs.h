@@ -12,4 +12,10 @@ void uart_putx(uint64 x);
 void kerneltrap();
 void timerinit();
 
+// kalloc.c
+uint64 *kalloc();
+
+// vm.c
+pte *walk(pagetable pt, uint64 va);
+
 #endif

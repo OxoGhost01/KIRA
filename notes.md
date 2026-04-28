@@ -207,3 +207,20 @@ Tips :
 You can create a variable with `myVariable = something` and use it with `$(myVariable)`.
 
 > Note : to stop the qemu emulation, press `Ctrl+A` then `x`
+
+
+# PTE format
+bits 63-54 : reserved
+bits 53-10 : PPN (Physical Page Number) — 44 bits
+bits 9-8   : RSW (reserved for software)
+bit 7      : D (dirty)
+bit 6      : A (accessed)
+bit 5      : G (global)
+bit 4      : U (user accessible)
+bit 3      : X (executable)
+bit 2      : W (writable)
+bit 1      : R (readable)
+bit 0      : V (valid)
+
+> If V=0 the PTE is invalid — accessing it causes a page fault
+> If R=0, W=0, X=0 — it's a branch PTE (points to next level table). If any of R/W/X are set, it's a leaf PTE (points to actual physical memory)

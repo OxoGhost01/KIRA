@@ -12,4 +12,5 @@ SECTIONS{
     stack_bottom = .;
     . += 0x1000;
     stack_top = .;
+    end = .;
 }
