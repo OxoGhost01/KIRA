@@ -20,7 +20,7 @@ Kira is a learning-driven kernel project. The objective is to understand how an 
 - [x] Linker script — kernel placed at `0x80000000`
 - [x] Boot sequence — `_start` entry point, stack initialization
 - [x] UART driver — serial output
-- [ ] Memory management — physical page allocator
+- [X] Memory management — physical page allocator
 - [x] Interrupts & trap handling
 - [ ] Scheduler
 
@@ -51,10 +51,13 @@ kira/
 │   └── types.h         # primitive type definitions
 ├── kernel/
 │   ├── hello.c         # kernel entry point (main)
+│   ├── kalloc.c        # memory allocator
 │   ├── kerneltrap.c    # trap handler, timer init
+│   ├── panic.c         # panic handler
 │   ├── trap.S          # trap vector, register save/restore
 │   ├── timer.c         # timer helpers
-│   └── uart.c          # UART driver
+│   ├── uart.c          # UART driver
+│   └── vm.c            # memory management
 ├── linker.ld           # linker script
 └── Makefile
 ```
