@@ -8,6 +8,24 @@ SECTIONS{
         *(.text.*)
     }
 
+    .rodata : {
+        *(.rodata)
+        *(.rodata.*)
+    }
+
+    .data : {
+        *(.data)
+        *(.data.*)
+    }
+
+    .bss : {
+        *(.bss)
+        *(.bss.*)
+        *(.sbss)
+        *(.sbss.*)
+        *(COMMON)
+    }
+
     . = ALIGN(0x1000);
     stack_bottom = .;
     . += 0x1000;
